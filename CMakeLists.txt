@@ -13,7 +13,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_OUTPUT_DIR}/lib)
 include_directories(include ${OpenCV_INCLUDE_DIRS}/include)
 
 # easy
-add_executable(${PROJECT_NAME} src/easy/7_Reverse_Integer.cpp)
+add_executable(${PROJECT_NAME} src/easy/20_Valid_Parentheses.cpp)
 
 # medium
 #add_executable(${PROJECT_NAME} src/medium/2_Reverse_Integer.cpp)

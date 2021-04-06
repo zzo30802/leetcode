@@ -32,19 +32,5 @@
 *.app
 
 #others
-build/CMakeCache.txt
-build/cmake_install.cmake
-build/Makefile
-build/CMakeFiles/*
-build/lib/*
-build/bin/*
-build/ALL_BUILD.vcxproj
-build/ALL_BUILD.vcxproj.filters
-build/ZERO_CHECK.vcxproj
-build/ZERO_CHECK.vcxproj.filters
-build/x64
-build/leetcode.dir
-build/leetcode.sln
-build/leetcode.vcxproj
-build/leetcode.vcxproj.filters
-dump_file/log/*
+build
+!build/*.bat
