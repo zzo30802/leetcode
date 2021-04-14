@@ -1,4 +1,4 @@
-#include "common.h"
+// #include "../../include/common.h"
 /*
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
@@ -35,8 +35,12 @@ https://ithelp.ithome.com.tw/articles/10220036
 在字串中跟某字當作模板，逐一搜尋整個字串，直到找到下一個一樣的字，其中這一段距離就是答案了
 
 */
-#define test 1
-
+#define test 0
+#include <cstring>
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 class Solution {
  public:
 #if test == 0
@@ -46,8 +50,8 @@ class Solution {
     int ans = 0;
     for (int i = 0; i < s.length(); i++) {
       int len = 1;
-      memset(ascii, 0, sizeof(ascii));
-      ascii[int(s[i])] = 1;
+      memset(ascii, 0, sizeof(ascii));  // 清空成0
+      ascii[int(s[i])] = 1;             // ascii code中代表某字母的空間為1，表示出現過該字母
       for (int j = i + 1; j < s.length(); j++) {
         if (ascii[int(s[j])]) {
           if (len > ans) ans = len;
@@ -85,22 +89,29 @@ class Solution {
       if (ans == 0) ans = s.length();
       return ans;
     }
+    return ans;
   }
 #endif
 };
 
 int main() {
-  const std::string s = "abcabcbb";
-  std::shared_ptr<Solution> obj = std::make_shared<Solution>();
+  const std::string s = "pwwkew";
+  std::cout << Solution().lengthOfLongestSubstring(s) << std::endl;
 
   int ascii[256];
-  std::memset(ascii, 0, sizeof(ascii));
-  // ascii[int(s[0])] = 1;
-  std::cout << s[2] << std::endl;
-  std::cout << int(s[2]) << std::endl;  // 99
-  cout << sizeof(ascii) << endl;        // 1024 = 256 * 4
-  cout << ascii[int(s[2])] << endl;     // 0
-  cout << ascii[0] << endl;
+  memset(ascii, 0, sizeof(ascii));
+  std::cout << ascii[0] << std::endl;
+
+  // std::shared_ptr<Solution> obj = std::make_shared<Solution>();
+
+  // int ascii[256];
+  // std::memset(ascii, 0, sizeof(ascii));
+  // // ascii[int(s[0])] = 1;
+  // std::cout << s[2] << std::endl;
+  // std::cout << int(s[2]) << std::endl;  // 99
+  // cout << sizeof(ascii) << endl;        // 1024 = 256 * 4
+  // cout << ascii[int(s[2])] << endl;     // 0
+  // cout << ascii[0] << endl;
 
   // int ret = obj->lengthOfLongestSubstring(s);
   // cout << ret << endl;
